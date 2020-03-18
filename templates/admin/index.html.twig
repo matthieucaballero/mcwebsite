@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MC-Administration{% endblock %}
+
+
+{% block header %}
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{path('admin')}} ">
+        MC - Administration
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="{{path('admin_category')}} ">
+          Catégories
+        </a>
+  
+        <a class="navbar-item">
+          Items
+        </a>
+  
+
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-light">
+              Log out
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+{% endblock %}
+
+{% block body %}
+
+  <p style="padding: 1rem;">Ici l'accueil de la section d'administration</p>
+
+{% endblock %}
