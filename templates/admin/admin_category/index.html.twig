@@ -5,12 +5,16 @@
 <section class="container is-fluid">
 
     <div class="columns is-centered" style="padding: 2em 0;">
+        <a href="{{path('admin.category.new')}}" class="button is-fullwidth">Créer</a>
+    </div>
+
+    <div class="columns is-centered" style="padding: 2em 0;">
         <div class="column is-full">
             <table class="table is-fullwidth">
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Name</th>
+                        <th>Nom</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -19,7 +23,13 @@
                     <tr>
                         <td>{{category.id}} </td>
                         <td>{{category.name}} </td>
-                        <td>buttons</td>
+                        <td>
+                            <div class="buttons">
+                                <a href="{{path('admin.category.edit', {id: category.id})}} " class="button ">Editer</a>
+                                <a href="#" class="button is-danger is-light">Supprimer</a>
+                                <a href="#" class="button is-info is-light">Items associés</a>
+                            </div>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>

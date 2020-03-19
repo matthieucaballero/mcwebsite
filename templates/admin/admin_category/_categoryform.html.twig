@@ -1,0 +1,17 @@
+{{ form_start(form) }}
+<div class="field">
+  <div class="label">{{ form_label(form.name, 'Nom') }}</div>
+  <div class="control">
+    {{ form_widget(form.name, {'attr': {'class': 'input'}}) }}
+  </div>
+</div>
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link is-light">{{ button|default('Sauvegarder')}}</button>
+  </div>
+  <div class="control">
+    <a href="{{path('admin_category')}}" class="button is-light">Annuler</a>
+  </div>
+
+</div>
+{{ form_end(form) }}
