@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +42,13 @@ class Item
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
+
+    private $categories;
+
+    public function _construct()
+    {
+        $this->categories   = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -105,5 +113,10 @@ class Item
         $this->description = $description;
 
         return $this;
+    }
+
+    public function getCategories()
+    {
+        return $this->categories;
     }
 }

@@ -1,0 +1,48 @@
+{{ form_start(form) }}
+
+<div class="field">
+  <div class="label">{{ form_label(form.title, 'title') }}</div>
+  <div class="control">
+    {{ form_widget(form.title, {'attr': {'class': 'input'}}) }}
+  </div>
+</div>
+
+<div class="field">
+  <div class="label">{{ form_label(form.subtitle, 'subtitle') }}</div>
+  <div class="control">
+    {{ form_widget(form.subtitle, {'attr': {'class': 'input'}}) }}
+  </div>
+</div>
+
+<div class="field">
+  <div class="label">{{ form_label(form.period, 'period') }}</div>
+  <div class="control">
+    {{ form_widget(form.period, {'attr': {'class': 'input'}}) }}
+  </div>
+</div>
+
+<div class="field">
+  <div class="label">{{ form_label(form.description, 'description') }}</div>
+  <div class="control">
+    {{ form_widget(form.description, {'attr': {'class': 'input', 'type' :'textarea'}}) }}
+  </div>
+</div>
+
+<div class="field">
+  <div class="label">{{ form_label(form.categories, 'categories') }}</div>
+  <div class="control">
+    {{ form_widget(form.categories, {'attr': {'class': 'select'}}) }}
+  </div>
+</div>
+
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link is-light">{{ button|default('Sauvegarder')}}</button>
+  </div>
+  <div class="control">
+    <a href="{{path('admin_item')}}" class="button is-light">Annuler</a>
+  </div>
+
+</div>
+{{ form_end(form) }}

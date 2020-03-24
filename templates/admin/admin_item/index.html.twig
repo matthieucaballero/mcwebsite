@@ -1,0 +1,50 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block body %}
+
+<section class="container is-fluid">
+
+    <div class="columns is-centered" style="padding: 2em 0;">
+        <a href="{{path('admin.item.new')}} " class="button is-fullwidth">Créer</a>
+    </div>
+
+    <div class="columns is-centered" style="padding: 2em 0;">
+        <div class="column is-full">
+            <table class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Catégorie</th>
+                        <th>Titre</th>
+                        <th>Sous-titre</th>
+                        <th>Période</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{item.id}} </td>
+                        <td>{{item.category}} </td>
+                        <td>{{item.title}} </td>
+                        <td>{{item.subtitle}} </td>
+                        <td>{{item.period}} </td>
+                        <td>{{item.description}} </td>
+                        <td>
+                            <div class="buttons">
+                                <a href="#" class="button ">Editer</a>
+                                <a href="#" class="button is-danger is-light">Supprimer</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
