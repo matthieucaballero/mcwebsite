@@ -27,15 +27,19 @@
                     {% for item in items %}
                     <tr>
                         <td>{{item.id}} </td>
-                        <td>{{item.category}} </td>
+                        <td>{{item.category.name}} </td>
                         <td>{{item.title}} </td>
                         <td>{{item.subtitle}} </td>
                         <td>{{item.period}} </td>
                         <td>{{item.description}} </td>
                         <td>
                             <div class="buttons">
-                                <a href="#" class="button ">Editer</a>
-                                <a href="#" class="button is-danger is-light">Supprimer</a>
+                                <a href="{{path('admin.item.edit', {id: item.id})}}" class="button ">Editer</a>
+                                <form method='POST' action="{{path('admin.item.delete', {id: item.id})}}">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value='{{ csrf_token('delete' ~ item.id) }}'>
+                                    <button onclick="return confirm('Etes vous sur?');" class='button is-danger is-light'>Supprimer</button>
+                                </form>                    
                             </div>
                         </td>
                     </tr>

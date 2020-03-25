@@ -26,8 +26,12 @@
                         <td>
                             <div class="buttons">
                                 <a href="{{path('admin.category.edit', {id: category.id})}} " class="button ">Editer</a>
-                                <a href="#" class="button is-danger is-light">Supprimer</a>
-                                <a href="#" class="button is-info is-light">Items associés</a>
+                                <form method='POST' action="{{path('admin.category.delete', {id: category.id})}}">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value='{{ csrf_token('delete' ~ category.id) }}'>
+                                    <button onclick="return confirm('Etes vous sur?');" class='button is-danger is-light' style="margin-right: 0.5em;">Supprimer</button>
+                                </form>                    
+                                <a href="{{path('admin.category.items', {id: category.id})}} " class="button is-info is-light">Items associés</a>
                             </div>
                         </td>
                     </tr>

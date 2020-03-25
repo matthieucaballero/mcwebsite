@@ -19,7 +19,7 @@ class ItemType extends AbstractType
             ->add('subtitle')
             ->add('period')
             ->add('description')
-            ->add('categories', EntityType::class,[
+            ->add('category', EntityType::class,[
                 'class' => Category::class,
                 'choice_label' => 'name'
             ])

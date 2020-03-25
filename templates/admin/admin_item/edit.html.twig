@@ -1,0 +1,11 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block body %}
+
+<section class="section">
+    <h1 class="title">Editer un item</h1>
+    {% include "admin/admin_item/_itemform.html.twig" with {button: 'Editer'} %}
+
+</section>
+
+{% endblock %}

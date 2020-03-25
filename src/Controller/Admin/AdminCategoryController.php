@@ -78,5 +78,35 @@ class AdminCategoryController extends AbstractController
     }
 
 
+    /**
+     * @Route("/admin/category/{id}/items", name="admin.category.items", methods="GET")
+     */
+    public function associatedItems(Request $request, Category $category )
+    {
+
+        $items = $category->getItems();
+
+        return $this->render('admin/admin_category/associatedItems.html.twig', [
+            'items' => $items,
+            'category' => $category
+        ]);
+
+    }
+
+    /**
+     * @Route("/admin/category/{id}", name="admin.category.delete", methods="DELETE")
+     */
+    public function delete(Category $category, Request $request)
+    {
+
+        if ($this->isCsrfTokenValid('delete'.$category->getId(), $request->get('_token'))) {
+            $this->em->remove($category);
+            $this->em->flush();    
+        }
+
+        return $this->redirectToRoute('admin_category');
+    }
+
+
 
 }

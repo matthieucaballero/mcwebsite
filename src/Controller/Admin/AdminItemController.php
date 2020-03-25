@@ -42,8 +42,7 @@ class AdminItemController extends AbstractController
     {
         
         $item = new Item(); 
-        $categories = $this->categoryRepository->findAll();
-        //dd($categories);
+
         $form = $this->createForm(ItemType::class, $item);
         $form->handleRequest($request);
 
@@ -59,5 +58,42 @@ class AdminItemController extends AbstractController
         ]);
         
     }
+
+    /**
+     * @Route("/admin/item/{id}", name="admin.item.edit", methods="GET|POST")
+     */
+    public function edit(Request $request, Item $item )
+    {
+        $form = $this->createForm(ItemType::class, $item);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->em->flush();
+            $this->addFlash('success', 'Item modifié' );
+            return $this->redirectToRoute('admin_item');
+        }
+
+        return $this->render('admin/admin_item/edit.html.twig', [
+            'item' => $item,
+            'form' => $form->createView()
+        ]);
+
+    }
+
+    /**
+     * @Route("/admin/item/{id}", name="admin.item.delete", methods="DELETE")
+     */
+    public function delete(Item $item, Request $request)
+    {
+
+        if ($this->isCsrfTokenValid('delete'.$item->getId(), $request->get('_token'))) {
+            $this->em->remove($item);
+            $this->em->flush();    
+        }
+
+        return $this->redirectToRoute('admin_item');
+    }
+
+
 
 }

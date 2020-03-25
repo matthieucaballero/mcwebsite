@@ -43,12 +43,6 @@ class Item
      */
     private $description;
 
-    private $categories;
-
-    public function _construct()
-    {
-        $this->categories   = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -115,8 +109,4 @@ class Item
         return $this;
     }
 
-    public function getCategories()
-    {
-        return $this->categories;
-    }
 }

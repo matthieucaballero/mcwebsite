@@ -24,14 +24,14 @@
 <div class="field">
   <div class="label">{{ form_label(form.description, 'description') }}</div>
   <div class="control">
-    {{ form_widget(form.description, {'attr': {'class': 'input', 'type' :'textarea'}}) }}
+    {{ form_widget(form.description, {'attr': {'class': 'textarea', 'rows': '5'}}) }}
   </div>
 </div>
 
 <div class="field">
-  <div class="label">{{ form_label(form.categories, 'categories') }}</div>
+  <div class="label">{{ form_label(form.category, 'categories') }}</div>
   <div class="control">
-    {{ form_widget(form.categories, {'attr': {'class': 'select'}}) }}
+    <div class='select'> {{ form_widget(form.category) }} </div>
   </div>
 </div>
 
