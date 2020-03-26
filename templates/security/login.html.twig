@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block body %}
+
+<section class="container">
+
+    {% if error %}
+    <article class="message is-danger">
+        <div class="message-body">
+            {{ error.messageKey | trans(error.messagedata, 'security') }}
+        </div>
+    </article>
+    {% endif %}
+
+    <form action="{{path('login')}}" method="POST" style="padding: 2em;">
+
+        <div class="field">
+            <label class="label" for="username">Nom d'utilisateur</label>
+            <div class="control">
+                <input type="text" name="_username" id="username" class="input" value="{{last_username}} ">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="password">Mot de passe</label>
+            <div class="control">
+                <input type="password" name="_password" id="password" class="input">
+            </div>
+        </div>
+        <div class="control">
+            <button type="submit" class="button is-link">Se connecter</button>
+        </div>
+    </form>
+</section>
+
+{% endblock %}

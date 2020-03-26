@@ -32,9 +32,11 @@
   
       <div class="navbar-end">
         <div class="navbar-item">
+          {% if app.user %}
           <div class="buttons">
-            <a class="button is-light">Log out</a>
+            <a href="{{path('logout')}} " class="button is-light">Log out</a>
           </div>
+         {% endif %}
         </div>
       </div>
 
