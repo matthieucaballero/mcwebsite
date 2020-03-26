@@ -1,0 +1,53 @@
+.p1{
+    padding: 1em;
+}
+.p2{
+    padding: 2em;
+}
+.p3{
+    padding: 3em;
+}
+
+.m1{
+    margin: 1em;
+}
+.m2{
+    margin: 2em;
+}
+.m3{
+    margin: 3em;
+}
+
+.mv1{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.mv2{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.mv3{
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+
+#chapeau{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+#sectionIndex{
+    margin-top: 10em;
+}
+
+
+@media screen and (max-width:768px){
+
+#sectionIndex{
+    margin-top: 22em;
+}
+
+
+}

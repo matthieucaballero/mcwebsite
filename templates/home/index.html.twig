@@ -4,7 +4,65 @@
 
 {% block body %}
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste molestiae aut dignissimos cumque labore repellat id, officia temporibus delectus nisi, corporis quo. Nemo deserunt ut soluta odit, voluptatum voluptatem, veritatis dolorem, earum officiis sequi et quis! Odio, impedit minus harum aspernatur adipisci eos officiis doloremque, mollitia, provident error repudiandae architecto doloribus animi quaerat nulla fugit. Ullam ex repellat ut obcaecati possimus eligendi, asperiores, nulla fuga quae sequi cumque quos adipisci rerum culpa doloremque saepe quis, voluptatibus neque ea tempore. Est quam reprehenderit iure nulla veniam nostrum dolore ab, repudiandae autem ipsam pariatur dolorem iste perspiciatis, neque, quia perferendis in quo magnam! Quia reprehenderit vel, error aut, perferendis quis quibusdam velit ipsa libero, ad delectus maxime suscipit illo! Optio provident amet eius. Sapiente, dolor, deserunt tempore maxime earum ut aspernatur impedit nam adipisci quis quas pariatur totam aut commodi, ratione ipsam. Quasi a ipsum non voluptatibus? Facilis, voluptas! Fuga non illo asperiores, neque voluptates iure facilis ipsa? At voluptas perspiciatis maxime dolorum voluptatem accusamus porro consequatur! Ipsam impedit vel esse accusantium aliquam modi expedita quaerat earum error cupiditate repellat, omnis suscipit vitae tempora id exercitationem vero magni quos repellendus veritatis hic facilis. Quidem voluptate ut, recusandae consequuntur neque distinctio ipsam beatae.</p>
+<nav id="chapeau" class="level p2 has-background-white">
+    <div class="level-left">
+        <div class="level-item has-text-centered mv1">
+            <div>
+                <p class="title is-4">Matthieu Caballero</p>
+            </div>
+        </div>
+    </div>
+    {% for item in items %}
+    {% if item.category.name == "Général" %}
+    <div class="level-item has-text-centered">
+        <div>
+            <p class="heading">{{item.title}} </p>
+            <p class="subtitle is-6">{{item.description|nl2br}} </p>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <div class="level-item has-text-centered">
+        <div>
+            <p class="heading"></p>
+            <p class="title"></p>
+        </div>
+    </div>
 
+    <div class="level-right">
+        <div class="level-item has-text-centered">
+            {% if app.user %}
+            <div class="buttons">
+                <a href="{{path('logout')}} " class="button is-light">Log out</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+
+<section id="sectionIndex" class="container p2">
+
+    {% for category in categories %}
+    <article class="message is-info">
+        <div class="message-header">
+            <p>{{category.name}}</p>
+        </div>
+        <div class="message-body">
+            {% for item in items %}
+            {% if item.category.id == category.id %}
+            {{item.description}}
+            {% endif %}
+            {% endfor %}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
+            placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et
+            dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales,
+            arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna,
+            vehicula et sem eget, facilisis sodales sem.
+        </div>
+    </article>
+    {% endfor %}
+
+</section>
 
 {% endblock %}

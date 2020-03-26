@@ -2,57 +2,20 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Matthieu Caballero{% endblock %}</title>
+        <meta name="Description" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes">
+
+        <title>Matthieu Caballero - Développeur web{% block title %}{% endblock %}</title>
 
         <link rel="stylesheet" href="/bulma.css">
+        <link rel="stylesheet" href="/style.css">
 
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
 
-        {% block header %}
-
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="{{path('home')}} ">
-              MC
-            </a>
-        
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-        
-          <div class="navbar-menu">
-            <div class="navbar-start">
-              <a class="navbar-item" href="#">
-                aaaaa
-              </a>
-        
-              <a class="navbar-item">
-                bbbbb
-              </a>
-        
-      
-            </div>
-            
-            <div class="navbar-end">
-              <div class="navbar-item">
-                {% if app.user %}
-                <div class="buttons">
-                  <a href="{{path('logout')}} " class="button is-light">Log out</a>
-                </div>
-               {% endif %}
-              </div>
-            </div>
-      
-      
-          </div>
-        </nav>
-        
-        {% endblock %}
+        {% block header %}{% endblock %}
         {% block body %}{% endblock %}
 
 
