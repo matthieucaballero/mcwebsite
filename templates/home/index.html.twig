@@ -13,7 +13,7 @@
         </div>
     </div>
     {% for item in items %}
-    {% if item.category.name == "Général" %}
+    {% if (item.category.name == "Général") and ((item.title == "Téléphone") or (item.title == "E-mail")) %}
     <div class="level-item has-text-centered">
         <div>
             <p class="heading">{{item.title}} </p>
@@ -22,12 +22,6 @@
     </div>
     {% endif %}
     {% endfor %}
-    <div class="level-item has-text-centered">
-        <div>
-            <p class="heading"></p>
-            <p class="title"></p>
-        </div>
-    </div>
 
     <div class="level-right">
         <div class="level-item has-text-centered">
@@ -41,24 +35,24 @@
 </nav>
 
 
-<section id="sectionIndex" class="container p2">
+<section id="sectionIndex" class="container p2 ">
 
     {% for category in categories %}
-    <article class="message is-info">
-        <div class="message-header">
-            <p>{{category.name}}</p>
+    <article class="columns has-text-white-ter">
+        <div class="column has-text-right has-text-centered-mobile">
+            <h3 class="title is-5 has-text-white-ter">{{category.name}}</h3>
         </div>
-        <div class="message-body">
+        <div class="column is-three-quarters has-text-centered-mobile">
             {% for item in items %}
-            {% if item.category.id == category.id %}
-            {{item.description}}
-            {% endif %}
+                {% if item.category.id == category.id %}
+                <div class="mb1">
+                    <h4>{{item.title}}</h4>
+                    <h5>{{item.subtitle}}</h5>
+                    <h6>{{item.period}}</h6>
+                    <p>{{item.description|nl2br}}</p>
+                </div>
+                {% endif %}
             {% endfor %}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis
-            placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et
-            dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales,
-            arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna,
-            vehicula et sem eget, facilisis sodales sem.
         </div>
     </article>
     {% endfor %}

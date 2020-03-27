@@ -8,10 +8,12 @@
 
         <title>Matthieu Caballero - Développeur web{% block title %}{% endblock %}</title>
 
-        <link rel="stylesheet" href="/bulma.css">
-        <link rel="stylesheet" href="/style.css">
 
-        {% block stylesheets %}{% endblock %}
+
+        {% block stylesheets %}
+          <link rel="stylesheet" href="/bulma.css">
+          <link rel="stylesheet" href="/style.css">
+        {% endblock %}
     </head>
     <body>
 
@@ -19,11 +21,12 @@
         {% block body %}{% endblock %}
 
 
-        <footer class="footer is-marginless">
+        <footer class="p1 has-background-white">
             <div class="content has-text-centered">
-              <p>
+              <p class="mv0">
                 <strong>Matthieu Caballero</strong> - Développeur web
               </p>
+              <p class="is-size-7 mv0">Réalisé avec les frameworks Symfony 5 et Bulma.</p>
             </div>
           </footer>
         {% block javascripts %}{% endblock %}
