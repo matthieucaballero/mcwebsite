@@ -43,6 +43,11 @@ class Item
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $position;
+
 
     public function getId(): ?int
     {
@@ -108,5 +113,26 @@ class Item
 
         return $this;
     }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?int $position): self
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    static function cmp_items(Item $a, Item $b)
+    {
+        if ($a->getPosition() == $b->getPosition()) {
+            return 0;
+        }
+        return ($a->getPosition() > $b->getPosition()) ? +1 : -1;
+    }
+
 
 }

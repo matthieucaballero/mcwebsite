@@ -23,7 +23,7 @@ class ItemType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'name'
             ])
-            
+            ->add('position')
         ;
     }
 

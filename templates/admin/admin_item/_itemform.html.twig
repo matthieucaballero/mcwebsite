@@ -28,13 +28,25 @@
   </div>
 </div>
 
-<div class="field">
-  <div class="label">{{ form_label(form.category, 'categories') }}</div>
-  <div class="control">
-    <div class='select'> {{ form_widget(form.category) }} </div>
+<div class="columns">
+  <div class="column">
+    <div class="field">
+      <div class="label">{{ form_label(form.category, 'categories') }}</div>
+      <div class="control">
+        <div class='select'> {{ form_widget(form.category) }} </div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="field">
+      <div class="label">{{ form_label(form.position, 'position') }}</div>
+      <div class="control">
+        {{ form_widget(form.position, {'attr': {'class': 'input'}}) }}
+      </div>
+    </div>
+
   </div>
 </div>
-
 
 <div class="field is-grouped">
   <div class="control">

@@ -30,9 +30,14 @@ class HomeController extends AbstractController
         $categories = $this->categoryRepository->findAll();
         $items = $this->itemRepository->findAll();
 
+        usort($items, array("App\Entity\Item", "cmp_items"));
+
+        //dd($items);
         return $this->render('home/index.html.twig', [
             'categories' => $categories,
             'items' => $items
         ]);
     }
+
+
 }

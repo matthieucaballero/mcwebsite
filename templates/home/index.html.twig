@@ -4,6 +4,12 @@
 
 {% block body %}
 
+<div id="photo">
+    <figure class="image is-128x128">
+        <img class="is-rounded" src="img/portrait.jpg">
+    </figure>
+</div>
+
 <nav id="chapeau" class="level p2 has-background-white">
     <div class="level-left">
         <div class="level-item has-text-centered mv1">
@@ -40,15 +46,15 @@
     {% for category in categories %}
     <article class="columns has-text-white-ter">
         <div class="column has-text-right has-text-centered-mobile">
-            <h3 class="title is-5 has-text-white-ter">{{category.name}}</h3>
+            <h3 class="title is-4 has-text-white-ter">{{category.name}}</h3>
         </div>
         <div class="column is-three-quarters has-text-centered-mobile">
             {% for item in items %}
                 {% if item.category.id == category.id %}
-                <div class="mb1">
-                    <h4>{{item.title}}</h4>
-                    <h5>{{item.subtitle}}</h5>
-                    <h6>{{item.period}}</h6>
+                <div class="mb2">
+                    <h4 class="is-size-5">{{item.title}}</h4>
+                    <h5 class="is-size-6">{{item.subtitle}}</h5>
+                    <h6 class="is-size-7">{{item.period}}</h6>
                     <p>{{item.description|nl2br}}</p>
                 </div>
                 {% endif %}

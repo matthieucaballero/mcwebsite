@@ -3,48 +3,55 @@
 
 {% block header %}
 <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="{{path('admin')}} ">
-        MC - Administration
-      </a>
-  
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-  
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="{{path('admin_category')}} ">
-          Catégories
-        </a>
-  
-        <a class="navbar-item" href="{{path('admin_item')}} ">
-          Items
-        </a>
-  
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{path('admin')}} ">
+      MC - Administration
+    </a>
 
-      </div>
-  
-      <div class="navbar-end">
-        <div class="navbar-item">
-          {% if app.user %}
-          <div class="buttons">
-            <a href="{{path('logout')}} " class="button is-light">Log out</a>
-          </div>
-         {% endif %}
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="{{path('admin_category')}} ">
+        Catégories
+      </a>
+
+      <a class="navbar-item" href="{{path('admin_item')}} ">
+        Items
+      </a>
+
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        {% if app.user %}
+        <div class="buttons">
+          <a href="{{path('logout')}} " class="button is-light">Log out</a>
         </div>
+        {% endif %}
       </div>
-
     </div>
-  </nav>
+
+  </div>
+</nav>
 
 {% endblock %}
 
 {% block body %}
 
+<section id="adminContainer">
+
+  {% block admin %}
   <p style="padding: 1rem;">Ici l'accueil de la section d'administration</p>
+  {% endblock %}
+  
+</section>
 
 {% endblock %}

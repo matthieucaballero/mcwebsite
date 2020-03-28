@@ -1,6 +1,6 @@
 {% extends 'admin/index.html.twig' %}
 
-{% block body %}
+{% block admin %}
 
 <section class="container is-fluid">
 
@@ -14,6 +14,7 @@
                 <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Position</th>
                         <th>Catégorie</th>
                         <th>Titre</th>
                         <th>Sous-titre</th>
@@ -27,6 +28,7 @@
                     {% for item in items %}
                     <tr>
                         <td>{{item.id}} </td>
+                        <td>{{item.position}} </td>
                         <td>{{item.category.name}} </td>
                         <td>{{item.title}} </td>
                         <td>{{item.subtitle}} </td>
