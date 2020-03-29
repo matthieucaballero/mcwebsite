@@ -4,23 +4,24 @@
 
 {% block body %}
 
-<div id="photo">
-    <figure class="image is-128x128">
-        <img class="is-rounded" src="img/portrait.jpg">
-    </figure>
-</div>
 
 <nav id="chapeau" class="level p2 has-background-white">
     <div class="level-left">
         <div class="level-item has-text-centered mv1">
+            <figure class="image is-128x128">
+                <img class="is-rounded" src="img/portrait.jpg">
+            </figure>
+        </div>
+        <div class="level-item has-text-centered">
             <div>
                 <p class="title is-4">Matthieu Caballero</p>
             </div>
         </div>
     </div>
+
     {% for item in items %}
     {% if (item.category.name == "Général") and ((item.title == "Téléphone") or (item.title == "E-mail")) %}
-    <div class="level-item has-text-centered">
+    <div class="level-item has-text-centered is-hidden-mobile">
         <div>
             <p class="heading">{{item.title}} </p>
             <p class="subtitle is-6">{{item.description|nl2br}} </p>
@@ -30,7 +31,10 @@
     {% endfor %}
 
     <div class="level-right">
-        <div class="level-item has-text-centered">
+        <div class="level-item has-text-centered mv1">
+
+            <a href="https://www.linkedin.com/in/matthieu-caballero/" title="Allez vers profil linkedin"><i class="fab fa-linkedin-in"></i></a>
+
             {% if app.user %}
             <div class="buttons">
                 <a href="{{path('logout')}} " class="button is-light">Log out</a>

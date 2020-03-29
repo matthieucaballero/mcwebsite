@@ -53,17 +53,13 @@ body{
     background-size: cover;
 }
 
-#photo{
-    position: fixed;
-    top: 5em;
-    left: 1em;
-    z-index: 3;  
-}
+
 #chapeau{
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 2;
+    padding: 0 2em;
 }
 #sectionIndex{
     margin-top: 7em;
