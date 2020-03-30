@@ -26,7 +26,16 @@
     <div class="level-item has-text-centered is-hidden-mobile">
         <div>
             <p class="heading">{{item.title}} </p>
-            <p class="subtitle is-6">{{item.description|nl2br}} </p>
+            <a class="subtitle is-6"
+            {% if item.title == "Téléphone" %}
+                href="tel:+33611308140"
+            {% elseif item.title == "E-mail"%}
+                href="mailto:matthieu.caballero@gmail.com"    
+            {% endif %}
+            
+            >
+                {{item.description|nl2br}}
+            </a>
         </div>
     </div>
     {% endif %}
@@ -61,7 +70,13 @@
                     <h4 class="is-size-5">{{item.title}}</h4>
                     <h5 class="is-size-6">{{item.subtitle}}</h5>
                     <h6 class="is-size-7">{{item.period}}</h6>
+                    {% if item.title == "Téléphone" %}
+                        <a href="tel:+33611308140">{{item.description|nl2br}}</a>
+                    {% elseif item.title == "E-mail" %}
+                        <a href="mailto:matthieu.caballero@gmail.com">{{item.description|nl2br}}</a>
+                    {% else %}
                     <p>{{item.description|nl2br}}</p>
+                    {% endif %}
                 </div>
                 {% endif %}
             {% endfor %}

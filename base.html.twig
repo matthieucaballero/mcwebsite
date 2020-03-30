@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Description" content="">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes">
+
+        <title>Matthieu Caballero - Développeur web{% block title %}{% endblock %}</title>
+
+
+
+        {% block stylesheets %}
+          <link rel="stylesheet" href="/bulma.css">
+          <link rel="stylesheet" href="/style.css">
+        {% endblock %}
+    </head>
+    <body>
+
+        {% block header %}{% endblock %}
+        {% block body %}{% endblock %}
+
+
+        <footer class="p1 has-background-white">
+            <div class="content has-text-centered">
+              <p class="mv0">
+                <strong>Matthieu Caballero</strong> - Développeur web
+              </p>
+              <p class="is-size-7 mv0">Réalisé avec les frameworks Symfony 5 et Bulma.</p>
+            </div>
+          </footer>
+        <script src="https://kit.fontawesome.com/2a0888dafb.js" crossorigin="anonymous"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
