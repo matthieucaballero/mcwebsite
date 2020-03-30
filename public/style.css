@@ -18,6 +18,11 @@
     margin: 3em;
 }
 
+.pv1{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
 .mv0{
     margin-top: 0;
     margin-bottom: 0;
@@ -83,10 +88,12 @@ body{
 @media screen and (max-width:768px){
 
 #sectionIndex{
-    margin-top: 12em;
+    margin-top: 0;
     padding-bottom: 6em;
 }
-
+#chapeau{
+    position: relative;
+}
 
 
 }
