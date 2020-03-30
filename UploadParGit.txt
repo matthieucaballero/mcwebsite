@@ -5,3 +5,6 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 cat .ssh/id_rsa.pub
 
 git clone git@github.com:matthieucaballero/mcwebsite.git
+
+REcuperer les modifs
+git pull
