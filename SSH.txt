@@ -1,0 +1,8 @@
+Supprime tous les fichiers et dossiers
+rm -rf *
+
+Supprime tous les fichiers et dossiers qui commencent par .
+rm -rf .*
+
+Décompresser
+unzip nom_fichier.zip
